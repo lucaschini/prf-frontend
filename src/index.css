@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-gov-blue-warm;
+  }
+
+  ::-webkit-scrollbar        { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track  { @apply bg-gray-100; }
+  ::-webkit-scrollbar-thumb  { @apply bg-gray-300 rounded; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-gray-400; }
+}
+
+@layer components {
+  /* Botão padrão GOV.BR primário */
+  .btn-gov {
+    @apply inline-flex items-center justify-center gap-2
+           px-4 py-2 rounded text-sm font-semibold text-white
+           bg-gov-blue hover:bg-gov-blue-dark
+           transition-colors duration-150 cursor-pointer
+           border-none font-sans;
+  }
+
+  /* Botão secundário */
+  .btn-gov-outline {
+    @apply inline-flex items-center justify-center gap-2
+           px-4 py-2 rounded text-sm font-semibold
+           text-gov-blue bg-white border border-gov-blue
+           hover:bg-gov-blue-bg
+           transition-colors duration-150 cursor-pointer font-sans;
+  }
+
+  /* Card padrão */
+  .card {
+    @apply bg-white rounded-lg border border-gray-200 shadow-sm;
+  }
+
+  /* Label de seção */
+  .section-label {
+    @apply text-[11px] font-bold tracking-widest uppercase text-gray-500;
+  }
+
+  /* Badge ODS */
+  .ods-badge {
+    @apply text-[10px] font-semibold px-2 py-0.5 rounded-full
+           bg-white/20 border border-white/30 text-white;
+  }
+}
